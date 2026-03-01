@@ -1,4 +1,4 @@
-# 🚀 Ultra Admin - Dashboard System
+# 🚀 Sistema de login - Dashboard 
 
 Este é um sistema de gerenciamento administrativo robusto desenvolvido em PHP, utilizando a arquitetura **MVC (Model-View-Controller)** para garantir uma organização clara, escalável e de fácil manutenção.
 
@@ -16,7 +16,7 @@ Este é um sistema de gerenciamento administrativo robusto desenvolvido em PHP, 
 
 ### 📊 Dashboard Principal
 > Painel central com métricas, gráficos em tempo real e controle de navegação.
-![Dashboard do Sistema](https://cdn.discordapp.com/attachments/1233807998007382149/1477740238855209190/image.label.png?ex=69a5dc58&is=69a48ad8&hm=b5f0a5fe6b3114dc26d7b48eb94cb2fcb91882fe2fd0c91fb75ba2578e6f12c2&)
+![Dashboard do Sistema](https://cdn.discordapp.com/attachments/1233807998007382149/1477740238855209190/image.png?ex=69a5dc58&is=69a48ad8&hm=b5f0a5fe6b3114dc26d7b48eb94cb2fcb91882fe2fd0c91fb75ba2578e6f12c2&)
 
 ---
 
