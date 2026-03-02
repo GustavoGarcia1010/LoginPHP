@@ -1,7 +1,7 @@
-<?php require_once __DIR__ . '/../auth/VerificarAdmin.php' 
-?>
+<?php require_once __DIR__ . '/../auth/VerificarAdmin.php' ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,23 +14,63 @@
             --danger-color: #e74c3c;
             --success-color: #27ae60;
             --border-color: #ddd;
+            --nav-bg: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--secondary-color);
             color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            /* Removido padding para a nav encostar no topo */
         }
 
+        /* --- ESTILIZAÇÃO DA NAV --- */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 2rem;
+            background-color: var(--nav-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #2c3e50;
+        }
+
+        .nav-link-danger {
+            color: var(--danger-color);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 6px 16px;
+            border: 1.8px solid var(--danger-color);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .nav-link-danger:hover {
+            background-color: var(--danger-color);
+            color: white;
+        }
+
+        /* --- CONTAINER E CONTEÚDO --- */
         .container {
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 0 auto 40px auto;
             background: #fff;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         .header {
@@ -48,7 +88,7 @@
             color: #2c3e50;
         }
 
-        /* Tabela */
+        /* --- TABELA --- */
         .table-container {
             overflow-x: auto;
         }
@@ -59,51 +99,39 @@
             margin-top: 10px;
         }
 
-        th, td {
+        th,
+        td {
             text-align: left;
-            padding: 12px 15px;
+            padding: 14px 15px;
             border-bottom: 1px solid var(--border-color);
         }
 
         th {
             background-color: #f8f9fa;
             text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 0.5px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #7f8c8d;
         }
 
-        tbody tr:nth-child(even) {
-            background-color: #f9f9f9; 
+        tbody tr:hover {
+            background-color: #f1f4f7;
         }
 
-        tbody tr:nth-child(odd) {
-            background-color: #ffffff; 
-        }
-
-        tr:hover {
-            background-color: #f1f4f7 !important;
-        }
-
-        /* --- AJUSTE DOS BOTÕES (LADO A LADO) --- */
+        /* --- BOTÕES DE AÇÃO --- */
         .btn-group {
-            display: flex; 
-            gap: 5px;
+            display: flex;
+            gap: 8px;
         }
 
         .btn {
-            padding: 8px 12px;
-            border-radius: 6px;
+            padding: 6px 12px;
+            border-radius: 4px;
             text-decoration: none;
-            font-size: 13px;
-            cursor: pointer;
-            border: none;
+            font-size: 12px;
+            font-weight: 600;
             transition: all 0.2s;
-            font-weight: 500;
-        }
-
-        .btn:hover {
-            opacity: 0.8;
-            transform: translateY(-1px);
         }
 
         .btn-edit {
@@ -116,7 +144,32 @@
             color: white;
         }
 
+        .btn:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        /* --- TAGS / BADGES --- */
+        .badge-admin {
+            background-color: #e8f5e9;
+            color: var(--success-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
         @media (max-width: 600px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+
             .header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -127,6 +180,13 @@
 </head>
 
 <body>
+
+    <nav>
+        <div>
+            <a href="dashboardAdmin" class="nav-link">Dashboard</a>
+        </div>
+        <a href="Logout" class="nav-link-danger">Sair do Sistema</a>
+    </nav>
 
     <div class="container">
         <header class="header">
@@ -144,54 +204,46 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody class='relatorio'>
-                    </tbody>
+                <tbody class="relatorio">
+                </tbody>
             </table>
         </div>
     </div>
 
-    <script>
-        async function ListarAdministradores() {
-            try {
-                const relatorio = document.querySelector('.relatorio');
-                const response = await fetch('ListarAdministradoresAPI');
+   <script>
+    async function ListarAdministradores() {
+        try {
+            const relatorio = document.querySelector('.relatorio');
+            const response = await fetch('ListarAdministradoresAPI');
+            const data = await response.json();
 
-                if (!response.ok) throw new Error("Erro na requisição");
-
-                const data = await response.json();
-                
-                // Limpa apenas se a requisição deu certo
-                relatorio.innerHTML = ""; 
-
-                if (Array.isArray(data)) {
-                    data.forEach(user => {
-                        const linha = document.createElement('tr');
-                        linha.innerHTML = `
-                            <td>${user.Id}</td>
-                            <td>${user.Nome}</td>
-                            <td>${user.Email}</td>
-                            <td><span style="color: var(--success-color); font-weight: bold;">Administrador</span></td>
-                            <td>
-                                <div class="btn-group">
-                                    <a href="EditarAdmin.php?id=${user.Id}" class="btn btn-edit">Editar</a>
-                                    <a href="ExcluirAdmin.php?id=${user.Id}" class="btn btn-delete">Excluir</a>
-                                </div>
-                            </td>
-                        `;
-                        relatorio.appendChild(linha);
-                    });
-                }
-            } catch (error) {
-                console.error("Erro ao listar:", error);
+            if (Array.isArray(data)) {
+                relatorio.innerHTML = data.map(user => `
+                    <tr>
+                        <td>${user.Id}</td>
+                        <td>${user.Nome}</td>
+                        <td>${user.Email}</td>
+                        <td><span class="badge-admin">Admin</span></td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="EditarAdmin?id=${user.IdHash}" class="btn btn-edit">Editar</a>
+                                <a href="javascript:void(0)" onclick="confirmarExclusao('${user.IdHash}')" class="btn btn-delete">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                `).join('');
             }
+        } catch (error) { console.error("Erro:", error); }
+    }
+
+    function confirmarExclusao(idHash) {
+        if (confirm("Tem certeza que deseja excluir?")) {
+            window.location.href = `ExcluirAdmin?id=${idHash}`;
         }
-
-        // Inicia na hora
-        ListarAdministradores();
-
-        // Atualiza a cada 4 segundos
-        setInterval(ListarAdministradores, 4000);
-    </script>
+    }
+    ListarAdministradores();
+    setInterval(ListarAdministradores, 5000);
+</script>
 </body>
 
 </html>

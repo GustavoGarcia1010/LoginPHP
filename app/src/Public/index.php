@@ -37,7 +37,6 @@ if (session_status() === PHP_SESSION_NONE) {
             backdrop-filter: blur(8px);
         }
 
-        /* --- CONTAINER PRINCIPAL (O CARD) --- */
         .container {
             position: relative;
             width: 100%;
@@ -52,7 +51,6 @@ if (session_status() === PHP_SESSION_NONE) {
             transform: rotateY(180deg);
         }
 
-        /* --- CAIXAS DE FORMULÁRIO --- */
         .form-box {
             position: absolute;
             inset: 0;
@@ -72,7 +70,6 @@ if (session_status() === PHP_SESSION_NONE) {
             transform: rotateY(180deg);
         }
 
-        /* --- MENSAGENS MELHORADAS --- */
         .alert {
             padding: 15px;
             border-radius: 12px;
@@ -102,7 +99,7 @@ if (session_status() === PHP_SESSION_NONE) {
             border-left-color: #22c55e;
         }
 
-        /* --- ELEMENTOS DE FORMULÁRIO --- */
+  
         h2 {
             color: #1e293b;
             font-size: 2.2rem;
