@@ -49,5 +49,15 @@ class Usuario {
             ':email' => $email
         ]);
         }
+    
+    public function ListarAdministradores() {
+        $pdo = Conectar(); 
+        if (!$pdo) return false;
+        $sql = 'SELECT Id, Nome, Email FROM Usuario';
+        $stmt = $pdo->prepare($sql);  
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
     }
+}

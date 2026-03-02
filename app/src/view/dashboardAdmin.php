@@ -177,7 +177,7 @@ $avatarName = str_replace(' ', '+', $Nome);
         </div>
         <ul class="sidebar-menu">
             <li class="active"><a href="#"><i class="fas fa-chart-pie"></i> <span>Dashboard</span></a></li>
-            <li><a href="#"><i class="fas fa-users"></i> <span>Usuários</span></a></li>
+            <li><a href="ListarAdministradores"><i class="fas fa-users"></i> <span>Administradores</span></a></li>
             <li><a href="#"><i class="fas fa-shopping-bag"></i> <span>Vendas</span></a></li>
             <li><a href="#"><i class="fas fa-cog"></i> <span>Ajustes</span></a></li>
         </ul>

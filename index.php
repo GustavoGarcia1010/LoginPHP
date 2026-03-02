@@ -38,6 +38,16 @@ switch ($rota) {
         require_once __DIR__ . '/app/src/auth/Logout.php';
         break;
 
+    case 'ListarAdministradores':
+        require_once __DIR__ . '/app/src/view/VerAdmin.php';
+        break;
+
+    case 'ListarAdministradoresAPI':
+        require_once __DIR__ . '/app/src/controller/UsuarioController.php';
+        $controller = new UsuarioController();
+        $controller->ListarAdministradores();
+        break;
+
 
     default:
         header("Location: home");

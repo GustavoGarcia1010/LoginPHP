@@ -54,4 +54,19 @@ class UsuarioController {
             exit();
         }
     }
+
+   public function ListarAdministradores() {
+    $usuario = new Usuario();
+    $dataUsers = $usuario->ListarAdministradores(); 
+
+    // Limpa qualquer saída acidental anterior
+    ob_clean(); 
+
+    // Define o cabeçalho para o navegador entender que é um JSON
+    header('Content-Type: application/json');
+
+    // Retorna os dados para o JavaScript
+    echo json_encode($dataUsers);
+    exit(); 
+}
 }
