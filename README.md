@@ -51,7 +51,7 @@ O sistema implementa um fluxo de segurança rigoroso:
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **Backend:** PHP 8.x (Arquitetura MVC)
+* **Backend:** PHP 8.2.12 (Arquitetura MVC)
 * **Frontend:** HTML5, CSS3, JavaScript (Chart.js para gráficos)
 * **Banco de Dados:** MySQL
 * **Ícones:** Font Awesome & Google Fonts (Inter)
