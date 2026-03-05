@@ -62,7 +62,7 @@ O sistema implementa um fluxo de segurança rigoroso:
 
 1.  **Clone o repositório**:
     ```bash
-    git clone [https://github.com/GustavoGarcia1010/LoginPHP.git)
+    git clone https://github.com/GustavoGarcia1010/LoginPHP.git
     ```
 2.  **Banco de Dados**: Importe o arquivo SQL localizado em `app/src/config/database.sql` no seu PHPMyAdmin.
 3.  **Configuração**: Certifique-se de que o `mod_rewrite` do Apache está ativado no seu XAMPP.
