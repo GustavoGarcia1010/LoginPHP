@@ -8,11 +8,11 @@ Este é um sistema de gerenciamento administrativo robusto desenvolvido em PHP, 
 
 ### 🔐 Página de Login
 > Interface limpa e segura para autenticação de administradores.
-![Página de Login](https://cdn.discordapp.com/attachments/1233807998007382149/1477740099327365160/image.png?ex=69a5dc36&is=69a48ab6&hm=eaa799f3c5d7a1429428cdafbef32d83e9f532d7554d01b84d02656228d15194&)
+![Página de Login](https://cdn.discordapp.com/attachments/1233807998007382149/1477740099327365160/image.png?ex=69a9d0b6&is=69a87f36&hm=2b1fd4b7b16a9540a28406ef4ceeac32702c4b07f39b26922cbacae2b26b2790&)
 
 ### 📝 Página de Cadastro
 > Formulário estruturado para registro de novos usuários no sistema.
-![Página de Cadastro](https://cdn.discordapp.com/attachments/1233807998007382149/1477740298665726074/image.png?ex=69a5dc66&is=69a48ae6&hm=38a9eb6b4e73294504847472d836f9e4b882961f13b4955096e7b558d9c01a88&)
+![Página de Cadastro](https://cdn.discordapp.com/attachments/1233807998007382149/1477740298665726074/image.png?ex=69a9d0e6&is=69a87f66&hm=ccd80fa7d191758b51aaa8382e85470d416235c547eb311f068962be71acc231&)
 
 ### 📊 Dashboard Principal
 > Painel central com métricas, gráficos em tempo real e controle de navegação.
@@ -62,7 +62,7 @@ O sistema implementa um fluxo de segurança rigoroso:
 
 1.  **Clone o repositório**:
     ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+    git clone [https://github.com/GustavoGarcia1010/LoginPHP.git)
     ```
 2.  **Banco de Dados**: Importe o arquivo SQL localizado em `app/src/config/database.sql` no seu PHPMyAdmin.
 3.  **Configuração**: Certifique-se de que o `mod_rewrite` do Apache está ativado no seu XAMPP.
